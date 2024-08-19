@@ -46,3 +46,5 @@ jobs:
       #   run: npm run test
       - name: Deploy with Gatsby
         run: npm run deploy
+        env:
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
