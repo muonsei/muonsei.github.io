@@ -42,8 +42,8 @@ jobs:
         run: npm install --legacy-peer-deps
       # - name: Run lint
       #   run: npm run lint
-      # - name: Test
-      #   run: npm run test
+      - name: Test
+        run: npm run test
       - name: Configure Git
         run: |
           git config user.name "github-actions[bot]"
@@ -53,3 +53,15 @@ jobs:
         run: npm run deploy
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  sast:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: AppThreat/sast-scan-action@master
+        with:
+          type: "python"
+
+      - uses: actions/upload-artifact@v1
+        with:
+          name: reports
+          path: reports

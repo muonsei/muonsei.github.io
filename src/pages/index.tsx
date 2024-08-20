@@ -193,10 +193,10 @@ const IndexPage: React.FC<PageProps> = () => {
     );
 };
 
-const HelloWorld: React.FC<PageProps> = () => {
+const HelloWorld: React.FC<unknown> = () => {
     return (
         <main style={pageStyles}>
-            <h1>Hello world!</h1>
+            <h1 data-testid="hello">Hello world!</h1>
         </main>
     );
 };

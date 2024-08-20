@@ -15,6 +15,7 @@
         "clean": "gatsby clean",
         "typecheck": "tsc --noEmit",
         "lint": "npx eslint .",
+        "test": "node --no-warnings --experimental-vm-modules $( [ -f ./node_modules/.bin/jest ] && echo ./node_modules/.bin/jest || which jest )",
         "deploy": "gatsby build && gh-pages -d public -b main"
     },
     "dependencies": {
@@ -29,13 +30,22 @@
         "tailwindcss": "^3.4.10"
     },
     "devDependencies": {
+        "@babel/preset-typescript": "^7.24.7",
         "@eslint/js": "^9.9.0",
+        "@testing-library/jest-dom": "^6.4.8",
+        "@testing-library/react": "^16.0.0",
         "@types/eslint__js": "^8.42.3",
+        "@types/jest": "^29.5.12",
         "@types/node": "^20.11.19",
         "@types/react": "^18.2.55",
         "@types/react-dom": "^18.2.19",
+        "babel-jest": "^29.7.0",
+        "babel-preset-gatsby": "^3.13.2",
         "eslint": "^7.32.0",
         "gh-pages": "^6.1.1",
+        "identity-obj-proxy": "^3.0.0",
+        "jest": "^29.7.0",
+        "jest-environment-jsdom": "^29.7.0",
         "typescript": "^5.5.4",
         "typescript-eslint": "^8.2.0"
     }
