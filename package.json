@@ -14,6 +14,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
     "deploy": "gatsby build && mkdir -p public/.github/workflows && cp .github/workflows/main.yaml public/.github/workflows && gh-pages -d public -b main"
   },
   "dependencies": {
